@@ -17,3 +17,4 @@ with oracledb.connect(
         for row in cursor.execute(sql):
             for column in row:
                 print(column)
+

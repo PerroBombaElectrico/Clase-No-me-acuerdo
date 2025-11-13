@@ -1,0 +1,24 @@
+Create table Dueño(
+Nombre varchar2(100) primary Key,
+Numero NUMBER,
+Direccion varchar2(100)
+);
+
+Create table Mascota (
+Nombre varchar2(100),
+Edad NUMBER,
+Dueño varchar2(100)
+);
+
+Create table Perro(
+HistorialVacunas bool
+);
+
+Create table Gato(
+RegistroEsterilizacion Diccionario
+);
+
+Create table Ave(
+TipoJaula varchar2(50),
+ControlVuelo varchar2(100)
+);
