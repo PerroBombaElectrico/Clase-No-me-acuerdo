@@ -1,49 +1,36 @@
 def create_schema():
 
-    "tables = ["
-    "Create table Dueño("
-    "Nombre varchar2(100) primary Key,"
-    "Numero NUMBER,"
-    "Direccion varchar2(100)"
-    ");"
-    
-    "Create table Mascota ("
-    "Nombre varchar2(100),"
-    "Edad NUMBER,"
-    "Dueño varchar2(100)"
+    "CREATE TABLE Dueño ("
+    "id_dueño NUMBER PRIMARY KEY,"
+    "nombre VARCHAR2(50),"
+    "numero VARCHAR2(20),"
+    "direccion VARCHAR2(100)"
     ");"
 
-    "Create table Perro("
-    "HistorialVacunas boo"
+    "CREATE TABLE Mascota ("
+    "id_mascota NUMBER PRIMARY KEY,"
+    "nombre VARCHAR2(50),"
+    "edad NUMBER,"
+    "id_dueño NUMBER,"
+    "FOREIGN KEY (id_dueño) REFERENCES Dueño(id_dueño)"
     ");"
-    
-    "Create table Gato("
-    "RegistroEsterilizacion Diccionario"
+
+    "CREATE TABLE Perro ("
+    "id_mascota NUMBER PRIMARY KEY,"
+    "historial_vacunas CLOB,"
+    "FOREIGN KEY (id_mascota) REFERENCES Mascota(id_mascota)"
     ");"
-    
-    "Create table Ave("
-    "TipoJaula varchar2(50),"
-    "ControlVuelo varchar2(100)"
+
+    "CREATE TABLE Gato ("
+    "id_mascota NUMBER PRIMARY KEY,"
+    "registro_esterilizacion NUMBER(1),"
+    "FOREIGN KEY (id_mascota) REFERENCES Mascota(id_mascota)"
     ");"
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    "CREATE TABLE Ave ("
+    "id_mascota NUMBER PRIMARY KEY,"
+    "tipo_jaula VARCHAR2(30),"
+    "control_vuelo VARCHAR2(30),"
+    "FOREIGN KEY (id_mascota) REFERENCES Mascota(id_mascota)"
+    ");" 
     ]
