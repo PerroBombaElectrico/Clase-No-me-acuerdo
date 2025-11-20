@@ -32,5 +32,5 @@ def create_schema():
     "tipo_jaula VARCHAR2(30),"
     "control_vuelo VARCHAR2(30),"
     "FOREIGN KEY (id_mascota) REFERENCES Mascota(id_mascota)"
-    ");" 
-    ]
+    ");"  
+    

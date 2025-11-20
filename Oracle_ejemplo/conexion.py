@@ -19,8 +19,7 @@ def create_schema(query):
     except oracledb.DatabaseError as error:
         print(f"No se pudo crear la tabla: {error}")
 
-tables = [
-    def create_schema():
+    tables = [ 
 
         "CREATE TABLE Dueño ("
         "id_dueño NUMBER PRIMARY KEY,"
@@ -55,4 +54,4 @@ tables = [
         "control_vuelo VARCHAR2(30),"
         "FOREIGN KEY (id_mascota) REFERENCES Mascota(id_mascota)"
         ");"
-]
+    ]
