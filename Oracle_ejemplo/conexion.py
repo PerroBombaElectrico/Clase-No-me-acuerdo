@@ -61,19 +61,52 @@ tables = [
     )
 ]
 
+from datetime import datetime
+
 
 def create_Dueño(id_dueño, nombre, numero, direccion):
-    pass
+    sql = ("INSERT INTO Dueño (id_dueño, nombre, numero, direccion) VALUES (:id_Dueño, :nombre, :numero, :direccion)"
+    )
 
+    parametros = {
+        "id_Dueño":id_dueño,
+        "nombre":nombre,
+        "numero":numero,
+        "direccion":direccion
+        }
 
-def create_Mascota(id_mascota,id_mascotanombre,edad,id_dueño):
-    pass
+def create_Mascota(id_mascota, id_mascotanombre, edad, id_dueño):
+    sql = ("INSERT INTO Mascota (id_mascota, nombre, edad, id_dueño) VALUES (:id_mascota, :nombre, :edad, :id_dueño)"
+    )
+    parametros = {
+        "id_mascota":id_mascota,
+        "nombre":id_mascotanombre,
+        "edad":edad,
+        "id_dueño":id_dueño
+        }
 
 def create_perro(id_mascota, historial_vacunas):
-    pass
+    sql = ("INSERT INTO Perro (id_mascota, historial_vacunas) VALUES (:id_mascota, :historial_vacunas)"
+    )
+
+    parametros = {
+        "id_mascota":id_mascota,
+        "historial_vacunas":historial_vacunas
+        }
 
 def create_gato(id_mascota, registro_esterilizacion):
-    pass
+    sql = ("INSERT INTO Gato (id_mascota, registro_esterilizacion) VALUES (:id_mascota, :registro_esterilizacion)"
+        )
+    parametros = { 
+        "id_mascota":id_mascota,
+        "registro_esterilizacion":registro_esterilizacion
+        }
 
 def create_ave(id_mascota, tipo_jaula, control_vuelo):
-    pass
+    sql = ("INSERT INTO Ave (id_mascota, tipo_jaula, control_vuelo) VALUES (:id_mascota, :tipo_jaula, :control_vuelo)"
+    ) 
+    parametros = {
+        "id_mascota":id_mascota,
+        "tipo_jaula":tipo_jaula,
+        "control_vuelo":control_vuelo
+        }
