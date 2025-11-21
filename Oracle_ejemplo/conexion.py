@@ -74,6 +74,15 @@ def create_Dueño(id_dueño, nombre, numero, direccion):
         "numero":numero,
         "direccion":direccion
         }
+    try: 
+        with get_connection() as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(sql, parametros)
+                connection.commit()
+                print("inserción de datos correcta.")
+    except oracledb.DatabaseError as error:
+        print(f"No se pudo insertar el dato \n  {error} \n {sql} \n {parametros}")
+        
 
 def create_Mascota(id_mascota, id_mascotanombre, edad, id_dueño):
     sql = ("INSERT INTO Mascota (id_mascota, nombre, edad, id_dueño) VALUES (:id_mascota, :nombre, :edad, :id_dueño)"
@@ -84,7 +93,14 @@ def create_Mascota(id_mascota, id_mascotanombre, edad, id_dueño):
         "edad":edad,
         "id_dueño":id_dueño
         }
-
+    try:
+        with get_connection() as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(sql, parametros)
+                connection.commit()
+                print("inserción de datos correcta.")
+    except oracledb.DatabaseError as error:
+        print(f"No se pudo insertar el dato \n  {error} \n {sql} \n {parametros}")
 def create_perro(id_mascota, historial_vacunas):
     sql = ("INSERT INTO Perro (id_mascota, historial_vacunas) VALUES (:id_mascota, :historial_vacunas)"
     )
@@ -93,6 +109,15 @@ def create_perro(id_mascota, historial_vacunas):
         "id_mascota":id_mascota,
         "historial_vacunas":historial_vacunas
         }
+    
+    try:
+        with get_connection() as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(sql, parametros)
+                connection.commit()
+                print("inserción de datos correcta.")
+    except oracledb.DatabaseError as error:
+        print(f"No se pudo insertar el dato \n  {error} \n {sql} \n {parametros}")
 
 def create_gato(id_mascota, registro_esterilizacion):
     sql = ("INSERT INTO Gato (id_mascota, registro_esterilizacion) VALUES (:id_mascota, :registro_esterilizacion)"
@@ -101,6 +126,15 @@ def create_gato(id_mascota, registro_esterilizacion):
         "id_mascota":id_mascota,
         "registro_esterilizacion":registro_esterilizacion
         }
+    
+    try:
+        with get_connection() as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(sql, parametros)
+                connection.commit()
+                print("inserción de datos correcta.")
+    except oracledb.DatabaseError as error:
+        print(f"No se pudo insertar el dato \n  {error} \n {sql} \n {parametros}")
 
 def create_ave(id_mascota, tipo_jaula, control_vuelo):
     sql = ("INSERT INTO Ave (id_mascota, tipo_jaula, control_vuelo) VALUES (:id_mascota, :tipo_jaula, :control_vuelo)"
@@ -110,3 +144,35 @@ def create_ave(id_mascota, tipo_jaula, control_vuelo):
         "tipo_jaula":tipo_jaula,
         "control_vuelo":control_vuelo
         }
+    
+    try: 
+        with get_connection() as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(sql, parametros)
+                connection.commit()
+                print("inserción de datos correcta.")
+    except oracledb.DatabaseError as error:
+        print(f"No se pudo insertar el dato \n  {error} \n {sql} \n {parametros}")
+         
+    
+    def read_persona_by_id(id):
+        
+        pass
+    
+    def read_persona_by_id(id:int):
+        
+        pass
+    
+    def departamento_by_id(id:int):
+        
+        pass
+    
+    def read_empleado():
+    
+        pass
+
+    def read_empleado_by_id(id:int):
+    
+        pass
+    
+    
