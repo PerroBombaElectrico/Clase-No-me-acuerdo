@@ -209,3 +209,72 @@ def update_dueño(
             print(f"dato con ID={id_dueño} actualizado.")      
     except oracledb.DatabaseError as error:
         print(f"No se pudo actualizar el dato \n  {error} \n {sql} \n {parametros}")
+
+
+#Eliminación de datos 
+
+def delete_dueño(id_dueño):
+    sql = "DELETE FROM Dueño WHERE id_dueño = :id_dueño"
+    parametros = {"id_dueño": id_dueño}
+
+    try:
+        with get_connection() as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(sql, parametros)
+                connection.commit()
+                print(f"dato con ID={id_dueño} eliminado.")
+    except oracledb.DatabaseError as error:
+        print(f"No se pudo eliminar el dato \n  {error} \n {sql} \n {parametros}")
+
+
+def delete_mascota(id_mascota):
+    sql = "DELETE FROM Mascota WHERE id_mascota = :id_mascota"
+    parametros = {"id_mascota": id_mascota}
+
+    try:
+        with get_connection() as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(sql, parametros)
+                connection.commit()
+                print(f"dato con ID={id_mascota} eliminado.")
+    except oracledb.DatabaseError as error:
+        print(f"No se pudo eliminar el dato \n  {error} \n {sql} \n {parametros}")
+
+def delete_perro(id_mascota):
+    sql = "DELETE FROM Perro WHERE id_mascota = :id_mascota"
+    parametros = {"id_mascota": id_mascota}
+
+    try:
+        with get_connection() as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(sql, parametros)
+                connection.commit()
+                print(f"dato con ID={id_mascota} eliminado.")
+    except oracledb.DatabaseError as error:
+        print(f"No se pudo eliminar el dato \n  {error} \n {sql} \n {parametros}")
+
+def delete_gato(id_mascota):
+    sql = "DELETE FROM Gato WHERE id_mascota = :id_mascota"
+    parametros = {"id_mascota": id_mascota}
+
+    try:
+        with get_connection() as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(sql, parametros)
+                connection.commit()
+                print(f"dato con ID={id_mascota} eliminado.")
+    except oracledb.DatabaseError as error:
+        print(f"No se pudo eliminar el dato \n  {error} \n {sql} \n {parametros}")
+
+def delete_ave(id_mascota):
+    sql = "DELETE FROM Ave WHERE id_mascota = :id_mascota"
+    parametros = {"id_mascota": id_mascota}
+
+    try:
+        with get_connection() as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(sql, parametros)
+                connection.commit()
+                print(f"dato con ID={id_mascota} eliminado.")
+    except oracledb.DatabaseError as error:
+        print(f"No se pudo eliminar el dato \n  {error} \n {sql} \n {parametros}")
