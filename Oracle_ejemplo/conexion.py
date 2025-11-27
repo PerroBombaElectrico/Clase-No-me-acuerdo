@@ -199,19 +199,19 @@ def update_dueño(
         print("No se enviaron datos para actualizar.")
         return
 
-
     sql = f"UPDATE Dueño SET {', '.join(modificaciones)} WHERE id_dueño =:id_dueño"
     try:
         with get_connection() as connection:
             with connection.cursor() as cursor:
                 cursor.execute(sql, parametros)
             connection.commit()
-            print(f"dato con ID={id_dueño} actualizado.")      
+            print(f"dato con ID={id_dueño} actualizado.")
     except oracledb.DatabaseError as error:
         print(f"No se pudo actualizar el dato \n  {error} \n {sql} \n {parametros}")
 
 
-#Eliminación de datos 
+# Eliminación de datos
+
 
 def delete_dueño(id_dueño):
     sql = "DELETE FROM Dueño WHERE id_dueño = :id_dueño"
@@ -240,6 +240,7 @@ def delete_mascota(id_mascota):
     except oracledb.DatabaseError as error:
         print(f"No se pudo eliminar el dato \n  {error} \n {sql} \n {parametros}")
 
+
 def delete_perro(id_mascota):
     sql = "DELETE FROM Perro WHERE id_mascota = :id_mascota"
     parametros = {"id_mascota": id_mascota}
@@ -252,6 +253,7 @@ def delete_perro(id_mascota):
                 print(f"dato con ID={id_mascota} eliminado.")
     except oracledb.DatabaseError as error:
         print(f"No se pudo eliminar el dato \n  {error} \n {sql} \n {parametros}")
+
 
 def delete_gato(id_mascota):
     sql = "DELETE FROM Gato WHERE id_mascota = :id_mascota"
@@ -266,6 +268,7 @@ def delete_gato(id_mascota):
     except oracledb.DatabaseError as error:
         print(f"No se pudo eliminar el dato \n  {error} \n {sql} \n {parametros}")
 
+
 def delete_ave(id_mascota):
     sql = "DELETE FROM Ave WHERE id_mascota = :id_mascota"
     parametros = {"id_mascota": id_mascota}
@@ -278,3 +281,9 @@ def delete_ave(id_mascota):
                 print(f"dato con ID={id_mascota} eliminado.")
     except oracledb.DatabaseError as error:
         print(f"No se pudo eliminar el dato \n  {error} \n {sql} \n {parametros}")
+
+
+def main():
+    pass 
+if __name__ == "__main__":
+    main()
