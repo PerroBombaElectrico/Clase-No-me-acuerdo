@@ -282,8 +282,96 @@ def delete_ave(id_mascota):
     except oracledb.DatabaseError as error:
         print(f"No se pudo eliminar el dato \n  {error} \n {sql} \n {parametros}")
 
+"╔╗╚╝╠╣║►☻═"
 
 def main():
+    print(
+        """
+          ╔════════════════════════════╗
+          ║ Crud: Oracle + python ☻☻   ║
+          ╠════════════════════════════╣
+          ║1. ►insertar un dato        ║
+          ║2. ►consultar un dato       ║
+          ║3. ►consultar dato por ID   ║
+          ║4. ►modificar un dato       ║
+          ║5. ►eliminar un dato        ║  
+          ║0. ►Salir                   ║
+          ╠════════════════════════════╣
+          ║ La tabla dueño necesita    ║
+          ║ al menos un registro para  ║
+          ║ funcionar correctamente.   ║  
+          ╚════════════════════════════╝
+        """
+    )
+    pass 
+if __name__ == "__main__":
+    main()
+    
+    opcion = input("Seleccione una opción: ")
+    if opcion == "1":
+        print("Has seleccionado insertar un dato.")
+        print("Seleccione la tabla:")
+        print("1. Dueño")
+        print("2. Mascota")
+        print("3. Perro")
+        print("4. Gato")
+        print("5. Ave")
+        tabla_opcion = input("Seleccione una tabla: ")
+
+        if tabla_opcion == "1":
+            id_dueño = int(input("Ingrese el ID del dueño: "))
+            nombre = input("Ingrese el nombre del dueño: ")
+            numero = input("Ingrese el número del dueño: ")
+            direccion = input("Ingrese la dirección del dueño: ")
+            create_Dueño(id_dueño, nombre, numero, direccion)
+        elif tabla_opcion == "2":
+            id_mascota = int(input("Ingrese el ID de la mascota: "))
+            nombre = input("Ingrese el nombre de la mascota: ")
+            edad = int(input("Ingrese la edad de la mascota: "))
+            id_dueño = int(input("Ingrese el ID del dueño: "))
+            create_Mascota(id_mascota, nombre, edad, id_dueño)
+        elif tabla_opcion == "3":
+            id_mascota = int(input("Ingrese el ID de la mascota: "))
+            historial_vacunas = input("Ingrese el historial de vacunas: ")
+            create_perro(id_mascota, historial_vacunas)
+        elif tabla_opcion == "4":
+            id_mascota = int(input("Ingrese el ID de la mascota: "))
+            registro_esterilizacion = int(input("Ingrese el registro de esterilización (1 para sí, 0 para no): "))
+            create_gato(id_mascota, registro_esterilizacion)
+        elif tabla_opcion == "5":
+            id_mascota = int(input("Ingrese el ID de la mascota: "))
+            tipo_jaula = input("Ingrese el tipo de jaula: ")
+            control_vuelo = input("Ingrese el control de vuelo: ")
+            create_ave(id_mascota, tipo_jaula, control_vuelo)
+        else:
+            print("Opción no válida.")
+    
+    
+    
+    
+    
+    
+    if opcion == "1":
+        print("Has seleccionado insertar un dato.")
+        
+    print(
+        """
+          ╔════════════════════════════╗
+          ║ Crud: Oracle + python ☻☻   ║
+          ╠════════════════════════════╣
+          ║1. ►insertar un dato        ║
+          ║2. ►consultar un dato       ║
+          ║3. ►consultar dato por ID   ║
+          ║4. ►modificar un dato       ║
+          ║5. ►eliminar un dato        ║  
+          ║0. ►Salir                   ║
+          ╠════════════════════════════╣
+          ║ La tabla dueño necesita    ║
+          ║ al menos un registro para  ║
+          ║ funcionar correctamente.   ║  
+          ╚════════════════════════════╝
+        """
+    )
     pass 
 if __name__ == "__main__":
     main()
